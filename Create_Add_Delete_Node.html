@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function insert_new_text()
+            {
+                var newText = document.createTextNode(
+                    "This is dynamically added text!");
+                var textpart = document.getElementById("secondP");
+                textpart.appendChild(newText);
+            }
+            function delete1()
+            {
+                var the_node=document.getElementById("firstP");
+                the_node.parentNode.removeChild(the_node);
+            }
+            function delete2()
+            {
+                var the_node=document.getElementsByTagName("p")[0];
+                the_node.parentNode.removeChild(the_node);
+            }
+            function delete3()
+            {
+                var the_parent=document.getElementById("theBody");
+                the_parent.removeChild(the_parent.firstChild);
+            }
+            function delete_all_children()
+            {
+                var theNode = document.getElementById("theBody");
+                while (theNode.firstChild)
+                    theNode.removeChild(theNode.firstChild);
+            }
+        </script>
+    </head>
+
+    <body id="theBody">
+
+        <p id="firstP">
+            Hello.
+            </p>
+            How are you?
+            <br>
+            <p id="secondP">
+            It's a nice day!
+            </p>
+            <button type="button" onclick="insert_new_text()">Append</button>
+            <button type="button" onclick="delete1()">DeleteMethod1</button>
+            <button type="button" onclick="delete2()">DeleteMethod2</button>
+            <button type="button" onclick="delete3()">DeleteMethod3</button>
+            <button type="button" onclick="delete_all_children()">DeleteAllChildren</button>
+            <p>
+            Reload the page to reset the DOM.
+            </p>
+    </body>
+</html>

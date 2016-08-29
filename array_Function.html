@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script>
+    //forEach and map implimentations
+    //results variable used for map, numbers used for both.
+    var numbers = [1,2,3,4,5];
+    var square = function(el) {return el * el;}
+    var results = numbers.map(square);
+    numbers.forEach( function(elem,indx,array){
+      array[indx] = elem * elem;
+
+    });
+    alert(numbers);
+    alert(results);
+
+    </script>
+
+  </head>
+</html>
